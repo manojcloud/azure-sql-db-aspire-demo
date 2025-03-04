@@ -1,0 +1,26 @@
+
+cd .\AspireApp1.AppHost\
+
+---
+
+dotnet add package Aspire.Hosting.SqlServer
+
+---
+
+builder.AddParameter("sql-password");
+
+var sql = builder.AddSqlServer("sql", port:1433)
+    .WithLifetime(ContainerLifetime.Persistent);
+	
+var db = sql.AddDatabase("database");
+
+---
+
+cd ..
+cd .\AspireApp1.ApiService\
+
+--
+
+dotnet add package Microsoft.Data.SqlClient
+
+dotnet add package Aspire.Microsoft.Data.SqlClient

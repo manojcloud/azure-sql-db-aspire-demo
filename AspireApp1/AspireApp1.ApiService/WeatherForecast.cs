@@ -16,15 +16,15 @@ public class WeatherForecast(SqlConnection conn)
             string[] summaries = ["Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"];
 
             conn.Open();
-            var cmd = new SqlCommand("SELECT [value] AS id FROM GENERATE_SERIES(1,5)", conn);
+            var cmd = new SqlCommand("SELECT TOP(10) [Date], [DegreesCelsius] AS id FROM [dbo].[WeatherForecasts]", conn);
             var r = cmd.ExecuteReader();            
             while (r.Read())
             {
                 var d = new WeatherForecastData
                 (
-                    DateOnly.FromDateTime(DateTime.Now.AddDays(r.GetInt32(0))),
-                    Random.Shared.Next(-20, 55),
-                    summaries[Random.Shared.Next(summaries.Length)]
+                    DateOnly.FromDateTime(r.GetDateTime(0)),
+                    r.GetInt32(1),
+                    summaries[0]
                 );
 
                 yield return d;

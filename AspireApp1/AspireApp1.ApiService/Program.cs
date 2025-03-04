@@ -14,7 +14,7 @@ builder.Services.AddProblemDetails();
 builder.Services.AddOpenApi();
 
 // Add Aspire client integrations
-builder.AddSqlServerClient(connectionName: "tempdb");
+builder.AddSqlServerClient(connectionName: "aspiredb");
 
 var app = builder.Build();
 

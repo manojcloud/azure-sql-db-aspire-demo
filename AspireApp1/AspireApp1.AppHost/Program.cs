@@ -5,7 +5,11 @@ builder.AddParameter("sql-password");
 var sql = builder.AddSqlServer("sql", port:1433)
     .WithLifetime(ContainerLifetime.Persistent);
 
-var db = sql.AddDatabase("tempdb");
+var db = sql.AddDatabase("aspiredb");
+
+var dbPrj = builder.AddSqlProject<Projects.AspireApp1_Database>("dbproject")    
+    .WithReference(db)
+    .WaitFor(db);    
 
 var apiService = builder.AddProject<Projects.AspireApp1_ApiService>("apiservice")
     .WithReference(db)

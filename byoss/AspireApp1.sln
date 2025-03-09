@@ -1,0 +1,36 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35825.156 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspireApp1.AppHost", "AspireApp1.AppHost\AspireApp1.AppHost.csproj", "{9C047718-F4A9-4497-A7BA-6D7FCA4F04CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspireApp1.ServiceDefaults", "AspireApp1.ServiceDefaults\AspireApp1.ServiceDefaults.csproj", "{53D24348-B1DC-95A1-1953-B48BBD597BDB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication1", "WebApplication1\WebApplication1.csproj", "{A036D4D3-AA67-443A-A40C-820616585A4C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9C047718-F4A9-4497-A7BA-6D7FCA4F04CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C047718-F4A9-4497-A7BA-6D7FCA4F04CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C047718-F4A9-4497-A7BA-6D7FCA4F04CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C047718-F4A9-4497-A7BA-6D7FCA4F04CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53D24348-B1DC-95A1-1953-B48BBD597BDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53D24348-B1DC-95A1-1953-B48BBD597BDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53D24348-B1DC-95A1-1953-B48BBD597BDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53D24348-B1DC-95A1-1953-B48BBD597BDB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A036D4D3-AA67-443A-A40C-820616585A4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A036D4D3-AA67-443A-A40C-820616585A4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A036D4D3-AA67-443A-A40C-820616585A4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A036D4D3-AA67-443A-A40C-820616585A4C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B1A25C6B-1481-4285-A5FC-0AA1CC1C05BE}
+	EndGlobalSection
+EndGlobal

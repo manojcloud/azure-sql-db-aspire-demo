@@ -75,7 +75,10 @@ public class Worker(IServiceProvider serviceProvider, IHostApplicationLifetime h
         {
             // Seed the database
             await using var transaction = await dbContext.Database.BeginTransactionAsync(cancellationToken);
-            await dbContext.WeatherForecasts.AddAsync(wfd, cancellationToken);
+
+            if (dbContext.WeatherForecasts.Where(d => d.Date == wfd.Date).SingleOrDefault() == null)
+                await dbContext.WeatherForecasts.AddAsync(wfd, cancellationToken);
+            
             await dbContext.SaveChangesAsync(cancellationToken);
             await transaction.CommitAsync(cancellationToken);
         });

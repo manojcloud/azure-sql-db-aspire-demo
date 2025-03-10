@@ -22,7 +22,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\TodoDB\TodoDB.sqlproj" />
+    <ProjectReference Include="..\TodoApp.Database\TodoDB.sqlproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="dab-config.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
   <Target Name="RestoreNpm" BeforeTargets="Build" Condition=" '$(DesignTimeBuild)' != 'true' ">

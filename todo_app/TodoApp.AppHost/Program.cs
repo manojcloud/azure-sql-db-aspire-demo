@@ -21,7 +21,7 @@ var dab = builder.AddDataAPIBuilder("dab")
     .WaitFor(sqlDb)
     .WaitForCompletion(dbPrj);
 
-builder.AddNpmApp("frontend", "../Frontend")
+builder.AddNpmApp("frontend", "../TodoApp.Frontend")
     .WithReference(dab)
     .WaitFor(dab)
     .WithHttpEndpoint(env: "PORT")

@@ -8,7 +8,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspireApp1.ServiceDefaults"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication1", "WebApplication1\WebApplication1.csproj", "{A036D4D3-AA67-443A-A40C-820616585A4C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherDatabase", "WeatherDatabase\WeatherDatabase.csproj", "{D4142434-C001-2D94-A497-A438DB4E4A3E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherDatabase", "WeatherDatabase\WeatherDatabase.sqlproj", "{D4142434-C001-2D94-A497-A438DB4E4A3E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

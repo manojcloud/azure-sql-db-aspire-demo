@@ -26,7 +26,7 @@ app.MapGet("/weatherforecast", (SqlConnection conn) =>
     using (conn)
     {
         conn.Open();
-        using (var cmd = new SqlCommand("SELECT TOP(10) [Id], [Date], [DegreesCelsius] FROM [dbo].[WeatherForecasts]", conn))
+        using (var cmd = new SqlCommand("SELECT TOP(10) [Id], [Date], [TemperatureC] FROM [dbo].[WeatherForecasts]", conn))
         {
             using (var reader = cmd.ExecuteReader())
             {

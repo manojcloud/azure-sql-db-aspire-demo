@@ -1,7 +1,7 @@
 var builder = DistributedApplication.CreateBuilder(args);
 
-var sqlSrv = builder.AddSqlServer("sqlsrv").
-    WithLifetime(ContainerLifetime.Persistent);
+var sqlSrv = builder.AddSqlServer("sqlsrv", port:1435)
+    .WithLifetime(ContainerLifetime.Persistent);
 
 var db = sqlSrv.AddDatabase("db");
 

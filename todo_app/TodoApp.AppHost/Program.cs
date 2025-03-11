@@ -1,9 +1,9 @@
 var builder = DistributedApplication.CreateBuilder(args);
 
-builder.AddParameter("sql-password");
+builder.AddParameter("sqlsrv-password");
 
 // SQL Server
-var sqlSrv = builder.AddSqlServer("sql", port: 1433)
+var sqlSrv = builder.AddSqlServer("sqlsrv", port: 1435)
     .WithLifetime(ContainerLifetime.Persistent);
 
 // Azure SQL

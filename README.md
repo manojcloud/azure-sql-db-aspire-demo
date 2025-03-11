@@ -2,56 +2,16 @@
 
 (short, 1-3 sentenced, description of the project)
 
-## Features
+## Base
 
-This project framework provides the following features:
+The basic .Net Aspire application with a simple WebAPI that you can use as a starting point to add support for Azure SQL or SQL Server
 
-* Feature 1
-* Feature 2
-* ...
+## Bring-Your-Own-SQL-Server (BYOSS)
 
-## Getting Started
+The simplest integration of SQL Server in .NET Aspire. It takes the "Base" example and updates the WebAPI so that now it is calling an existing SQL Server, using a provided connectiong string.
 
-### Prerequisites
+## Aspire-Hosted SQL Server
 
-(ideally very short, if any)
-
-- OS
-- Library version
-- ...
-
-### Installation
-
-(ideally very short)
-
-- npm install [package name]
-- mvn install
-- ...
-
-### Quickstart
-(Add steps to get up and running quickly)
-
-1. git clone [repository clone url]
-2. cd [repository name]
-3. ...
+Change the BYOSS sample so the SQL Server is deployed and managed by Aspire orchestration, providing a thight integration with the Aspire environment. SQL Server is deployed in a OCI container by Aspire. No changes to WebAPI project.
 
 
-## Demo
-
-A demo app is included to show how to use the project.
-
-To run the demo, follow these steps:
-
-(Add steps to start up the demo)
-
-1.
-2.
-3.
-
-## Resources
-
-(Any additional resources or related projects)
-
-- Link to supporting information
-- Link to similar sample
-- ...

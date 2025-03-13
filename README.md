@@ -1,6 +1,6 @@
-# Project Name
+# SQL Server Aspire Samples
 
-(short, 1-3 sentenced, description of the project)
+A set of samples that show how to integrate SQL Server and Azure SQL with .NET Aspire.
 
 ## Base
 

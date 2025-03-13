@@ -18,43 +18,49 @@ The simplest integration of SQL Server in .NET Aspire. It takes the "Base" examp
 
 - Folder: `./hostedss`
 
-Change the BYOSS sample so the SQL Server is deployed and managed by Aspire orchestration, providing a thight integration with the Aspire environment. SQL Server is deployed in a OCI container by Aspire. No changes to WebAPI project.
+Change the BYOSS sample so the SQL Server is deployed and managed by Aspire orchestration, providing a basic integration with the Aspire environment. SQL Server is deployed in a OCI container by Aspire. No changes to WebAPI project.
+
+The integration with Aspire is quite basic in this sample as it is done using only on the server side, introducting usage the `Aspire.Hosting.SqlServer` library in AppHost project. 
+
+The client application (Webapplication1) is still getting the connection string from the Aspire-provided environment variable.
 
 ## Aspire-Hosted SQL Server + DBUp
 
 - Folder: `./hostedss - dbup`
 
-TDB
+In this sample, which is based on the previous one, deployment of database scheama is also added to the solution. 
+
+In addition there is now full integration of SQL Server with the Aspire environment. The client application (Webapplication1) is now getting the connection object via Dependency Injection, thanks to the usage of the `Aspire.Microsoft.Data.SqlClient` library. 
+
+The database is deployed using an imperative approach, via the `DbUp` library, that is also orchestrated by Aspire, by a custom application (DatabaseDeploy) that is added to the AppHost project to allow Aspire to orchestrate it.
 
 ## Aspire-Hosted SQL Server + DbPrj
 
 - Folder: `./hostedss - dbprj`
 
-TDB
+Similar to the previous sample, but the database is deployed using a declarative approach, using a [Database Project](https://learn.microsoft.com/sql/tools/sql-database-projects/sql-database-projects?view=sql-server-ver16), that is also orchestrated by Aspire, via the community extension `CommunityToolkit.Aspire.Hosting.SqlDatabaseProjects`.
 
 ## Aspire-Hosted SQL Server + EF Core
 
 - Folder: `./hostedss - ef`
 
-TDB
+In this sample, the client application (Webapplication1) is now using Entity Framework Core to interact with the SQL Server. The EF Core database context is provided via Dependency Injection, thanks to the usage of the library: `Aspire.Microsoft.EntityFrameworkCore.SqlServer`.
+
+The database is deployed using a EF Core database migrations, that are deployed with the support of a Worker Service, as explained in the Aspire documentation ["Apply Entity Framework Core migrations in .NET Aspire"](https://learn.microsoft.com/en-us/dotnet/aspire/database/ef-core-migrations).
 
 ## Aspire-Hosted SQL Server + DbUp + DAB
 
 - Folder: `./hostedss - dbup - dab`
 
-TDB
+In this sample, taken from the `./hostedss - dbup` sample, and add Data API Builder (DAB) to the solution, so that the database can be exposed as a REST and GraphQL API, so there is no need anymore to manuallly created a CRUD API and therefore the WebAPI project is removed.
 
-## Aspire-Hosted SQL Server + EF Core
-
-- Folder: `./hostedss - ef`
-
-TDB
+DAB is orchestrated by Aspire, via the community extension `CommunityToolkit.Aspire.Hosting.Azure.DataApiBuilder`, that has been added to the AppHost project.
 
 ## End-To-End Jamstack "ToDo List" Application 
 
 - Folder: `./todo_app`
 
-TDB
+Full end-to-end example of a Jamstack application, with a Vue front-end, a Data API Builder back-end, and SQL Server database, deployed using a Database Project. Everything is orchestrated by Aspire, including the Node application (TodoApp.Frontend), thanks to the `ommunityToolkit.Aspire.Hosting.NodeJS.Extensions` library.
 
 
 

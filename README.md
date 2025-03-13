@@ -34,7 +34,7 @@ In addition there is now full integration of SQL Server with the Aspire environm
 
 The database is deployed using an imperative approach, via the `DbUp` library, that is also orchestrated by Aspire, by a custom application (DatabaseDeploy) that is added to the AppHost project to allow Aspire to orchestrate it.
 
-## Aspire-Hosted SQL Server + DbPrj
+## Aspire-Hosted SQL Server + Database Project
 
 - Folder: `./hostedss - dbprj`
 

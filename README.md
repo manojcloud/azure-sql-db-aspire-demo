@@ -48,6 +48,8 @@ In this sample, the client application (Webapplication1) is now using Entity Fra
 
 The database is deployed using a EF Core database migrations, that are deployed with the support of a Worker Service, as explained in the Aspire documentation ["Apply Entity Framework Core migrations in .NET Aspire"](https://learn.microsoft.com/en-us/dotnet/aspire/database/ef-core-migrations).
 
+Please note that to keep the sample as simple as possible the EF Core entities and migrations have been defined directly in the WebApplication1 solution, which is not a best practice for a real-world application. A dedicated project should be created for the EF Core entities and migrations.
+
 ## Aspire-Hosted SQL Server + DbUp + DAB
 
 - Folder: `./hostedss - dbup - dab`

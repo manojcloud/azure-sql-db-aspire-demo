@@ -2,7 +2,7 @@
 
 A set of samples that show how to integrate SQL Server and Azure SQL with .NET Aspire.
 
-## Base
+## Base Sample
 
 - Folder: `./base`
 

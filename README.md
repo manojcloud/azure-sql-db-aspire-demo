@@ -6,7 +6,7 @@ A set of samples that show how to integrate SQL Server and Azure SQL with .NET A
 
 - Folder: `./base`
 
-The basic .Net Aspire application with a simple WebAPI that you can use as a starting point to add support for Azure SQL or SQL Server
+The basic .Net Aspire application with a simple WebAPI project (WebApplication1) that you can use as a starting point to add support for Azure SQL or SQL Server
 
 ## Bring-Your-Own-SQL-Server (BYOSS)
 
@@ -22,15 +22,15 @@ Change the BYOSS sample so the SQL Server is deployed and managed by Aspire orch
 
 The integration with Aspire is quite basic in this sample as it is done using only on the server side, introducting usage the `Aspire.Hosting.SqlServer` library in AppHost project. 
 
-The client application (Webapplication1) is still getting the connection string from the Aspire-provided environment variable.
+The client WebAPI application (Webapplication1) is still getting the connection string from the Aspire-provided environment variable.
 
 ## Aspire-Hosted SQL Server + DBUp
 
 - Folder: `./hostedss - dbup`
 
-In this sample, which is based on the previous one, deployment of database scheama is also added to the solution. 
+In this sample, which is based on the previous one, deployment of database schema is also added to the solution. 
 
-In addition there is now full integration of SQL Server with the Aspire environment. The client application (Webapplication1) is now getting the connection object via Dependency Injection, thanks to the usage of the `Aspire.Microsoft.Data.SqlClient` library. 
+In addition there is now full integration of SQL Server with the Aspire environment. The client WebAPI application (WebApplication1) is now getting the connection object via Dependency Injection, thanks to the usage of the `Aspire.Microsoft.Data.SqlClient` library. 
 
 The database is deployed using an imperative approach, via the `DbUp` library, that is also orchestrated by Aspire, by a custom application (DatabaseDeploy) that is added to the AppHost project to allow Aspire to orchestrate it.
 

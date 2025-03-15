@@ -17,6 +17,7 @@ var dbPrj = builder.AddSqlProject<Projects.TodoDB>("tododb")
     .WaitFor(sqlDb);    
 
 var dab = builder.AddDataAPIBuilder("dab")
+    .WithImageTag("latest")
     .WithReference(sqlDb)    
     .WaitFor(sqlDb)
     .WaitForCompletion(dbPrj);

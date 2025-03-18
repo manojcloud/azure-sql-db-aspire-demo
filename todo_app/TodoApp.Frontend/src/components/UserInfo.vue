@@ -1,7 +1,9 @@
 <template>
   <footer class="info">
+    <!--
     <label v-if="!userDetails" id="login">[<a href=".auth/login/github">login</a>]</label>
     <label v-if="userDetails" id="logoff">[<a href=".auth/logout">logoff {{ userDetails }}</a>]</label>
+    -->
     <p>Double-click to edit a todo, drag-and-drop a todo to change position</p>
     <div class="bottom">
       <p>Original <a href="https://github.com/vuejs/vuejs.org/tree/master/src/v2/examples/vue-20-todomvc">Vue.JS Sample</a> by <a href="http://evanyou.me">Evan You</a>,

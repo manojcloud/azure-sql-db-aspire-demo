@@ -62,7 +62,19 @@ DAB is orchestrated by Aspire, via the community extension `CommunityToolkit.Asp
 
 - Folder: `./todo_app`
 
-Full end-to-end example of a Jamstack application, with a Vue front-end, a Data API Builder back-end, and SQL Server database, deployed using a Database Project. Everything is orchestrated by Aspire, including the Node application (TodoApp.Frontend), thanks to the `ommunityToolkit.Aspire.Hosting.NodeJS.Extensions` library.
+Full end-to-end example of a Jamstack application, with a Vue front-end, a Data API Builder back-end, and SQL Server database, deployed using a Database Project. Everything is orchestrated by Aspire, including the Node application (TodoApp.Frontend), thanks to the `CommunityToolkit.Aspire.Hosting.NodeJS.Extensions` library.
 
+You can run the application, either via Visual Studio or Visual Studio Coide or the command line:
 
+```
+cd .\TodoApp.AppHost\
+dotnet run
+```
+
+if for some reason you get an error about `.dacpac` file not being available, you can run the following command to build the database project:
+
+```
+cd .\TodoApp.Database\
+dotnet build
+```
 

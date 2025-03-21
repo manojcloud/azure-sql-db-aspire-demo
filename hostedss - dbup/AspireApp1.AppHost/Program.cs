@@ -1,7 +1,11 @@
 var builder = DistributedApplication.CreateBuilder(args);
 
-var sqlSrv = builder.AddSqlServer("sqlsrv", port:1435).
-    WithLifetime(ContainerLifetime.Persistent);
+// If you plan to use SQL Server
+// var sqlSrv = builder.AddSqlServer("sqlsrv", port:1435).
+//     WithLifetime(ContainerLifetime.Persistent);
+
+// If you plan to deploy in Azure SQL Server
+var sqlSrv = builder.AddAzureSqlServer("sqlsrv").RunAsContainer();
 
 var db = sqlSrv.AddDatabase("db");
 

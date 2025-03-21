@@ -38,7 +38,7 @@ The database is deployed using an imperative approach, via the `DbUp` library, t
 
 - Folder: `./hostedss - dbprj`
 
-Similar to the previous sample, but the database is deployed using a declarative approach, using a [Database Project](https://learn.microsoft.com/sql/tools/sql-database-projects/sql-database-projects?view=sql-server-ver16), that is also orchestrated by Aspire, via the community extension `CommunityToolkit.Aspire.Hosting.SqlDatabaseProjects`.
+Similar to the previous sample, but the database is deployed using a declarative approach, using a [SDK-Style Database Project](https://techcommunity.microsoft.com/blog/azuresqlblog/the-microsoft-build-sql-project-sdk-is-now-generally-available/4392063), that is also orchestrated by Aspire, via the community extension `CommunityToolkit.Aspire.Hosting.SqlDatabaseProjects`.
 
 ## Aspire-Hosted SQL Server + EF Core
 
@@ -65,7 +65,7 @@ DAB is orchestrated by Aspire, via the community extension `CommunityToolkit.Asp
 
 - Folder: `./todo_app`
 
-Full end-to-end example of a Jamstack application, with a Vue front-end, a Data API Builder back-end, and SQL Server database, deployed using a Database Project. Everything is orchestrated by Aspire, including the Node application (TodoApp.Frontend), thanks to the `CommunityToolkit.Aspire.Hosting.NodeJS.Extensions` library.
+Full end-to-end example of a Jamstack application, with a Vue front-end, a Data API Builder back-end, and SQL Server database, deployed using a [SDK-Style Database Project](https://techcommunity.microsoft.com/blog/azuresqlblog/the-microsoft-build-sql-project-sdk-is-now-generally-available/4392063). Everything is orchestrated by Aspire, including the Node application (TodoApp.Frontend), thanks to the `CommunityToolkit.Aspire.Hosting.NodeJS.Extensions` library.
 
 You can run the application, either via Visual Studio or Visual Studio Coide or the command line:
 

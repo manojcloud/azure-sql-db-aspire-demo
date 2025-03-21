@@ -7,7 +7,7 @@ A set of samples that show how to integrate SQL Server and Azure SQL with .NET A
 - [Aspire-Hosted SQL Server](#aspire-hosted-sql-server)
 - [Aspire-Hosted SQL Server + DBUp](#aspire-hosted-sql-server--dbup)
 - [Aspire-Hosted SQL Server + Database Project](#aspire-hosted-sql-server--database-project)
-- [Aspire-Hosted SQL Server + EF Core](#aspire-hosted-sql-server--ef-core)
+- [Aspire-Hosted SQL Server + EF Core](#aspire-hosted-sql-server--ef-core) (Includes deployment in Azure with Azure SQL)
 - [Aspire-Hosted SQL Server + DbUp + DAB](#aspire-hosted-sql-server--dbup--dab)
 - [End-To-End Jamstack "ToDo List" Application](#end-to-end-jamstack-todo-list-application)
 

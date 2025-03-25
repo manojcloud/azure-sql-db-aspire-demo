@@ -35,7 +35,7 @@ The client WebAPI application (Webapplication1) is still getting the connection 
 
 ## Aspire-Hosted SQL Server + DBUp
 
-- Folder: [`./hostedss - dbup`](./hostedss - dbup)
+- Folder: [`./hostedss - dbup`](./hostedss%20-%20dbup)
 
 In this sample, which is based on the previous one, deployment of database schema is also added to the solution. 
 
@@ -45,13 +45,13 @@ The database is deployed using an imperative approach, via the `DbUp` library, t
 
 ## Aspire-Hosted SQL Server + Database Project
 
-- Folder: [`./hostedss - dbprj`](./hostedss - dbprj)
+- Folder: [`./hostedss - dbprj`](./hostedss%20-%20dbprj)
 
 Similar to the previous sample, but the database is deployed using a declarative approach, using a [SDK-Style Database Project](https://techcommunity.microsoft.com/blog/azuresqlblog/the-microsoft-build-sql-project-sdk-is-now-generally-available/4392063), that is also orchestrated by Aspire, via the community extension `CommunityToolkit.Aspire.Hosting.SqlDatabaseProjects`.
 
 ## Aspire-Hosted SQL Server + EF Core
 
-- Folder: [`./hostedss - ef`](./hostedss - ef)
+- Folder: [`./hostedss - ef`](./hostedss%20-%20ef)
 
 In this sample, the client application (Webapplication1) is now using Entity Framework Core to interact with the SQL Server. The EF Core database context is provided via Dependency Injection, thanks to the usage of the library: `Aspire.Microsoft.EntityFrameworkCore.SqlServer`.
 
@@ -64,7 +64,7 @@ Please note that to keep the sample as simple as possible the EF Core entities a
 
 ## Aspire-Hosted SQL Server + DbUp + DAB
 
-- Folder: [`./hostedss - dbup - dab`](./hostedss - dbup - dab)
+- Folder: [`./hostedss - dbup - dab`](./hostedss%20-%20dbup%20-%20dab)
 
 In this sample, taken from the `./hostedss - dbup` sample, and add Data API Builder (DAB) to the solution, so that the database can be exposed as a REST and GraphQL API, so there is no need anymore to manuallly created a CRUD API and therefore the WebAPI project is removed.
 

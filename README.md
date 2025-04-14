@@ -1,15 +1,16 @@
 # SQL Server Aspire Samples
 
-A set of samples that show how to integrate SQL Server and Azure SQL with .NET Aspire.
+A set of samples that show how to integrate SQL Server and Azure SQL with .NET Aspire. **Updated to use Aspire 9.2.**
 
-- [Base Sample](#base-sample)
-- [Bring-Your-Own-SQL-Server (BYOSS)](#bring-your-own-sql-server-byoss)
-- [Aspire-Hosted SQL Server](#aspire-hosted-sql-server)
-- [Aspire-Hosted SQL Server + DBUp](#aspire-hosted-sql-server--dbup)
-- [Aspire-Hosted SQL Server + Database Project](#aspire-hosted-sql-server--database-project)
-- [Aspire-Hosted SQL Server + EF Core](#aspire-hosted-sql-server--ef-core) (Includes deployment in Azure with Azure SQL)
-- [Aspire-Hosted SQL Server + DbUp + DAB](#aspire-hosted-sql-server--dbup--dab)
-- [End-To-End Jamstack "ToDo List" Application](#end-to-end-jamstack-todo-list-application)
++ [SQL Server Aspire Samples](#sql-server-aspire-samples)
+  + [Base Sample](#base-sample)
+  + [Bring-Your-Own-SQL-Server (BYOSS)](#bring-your-own-sql-server-byoss)
+  + [Aspire-Hosted SQL Server](#aspire-hosted-sql-server)
+  + [Aspire-Hosted SQL Server + DBUp](#aspire-hosted-sql-server--dbup)
+  + [Aspire-Hosted SQL Server + Database Project](#aspire-hosted-sql-server--database-project)
+  + [Aspire-Hosted SQL Server + EF Core](#aspire-hosted-sql-server--ef-core)
+  + [Aspire-Hosted SQL Server + DbUp + DAB](#aspire-hosted-sql-server--dbup--dab)
+  + [End-To-End Jamstack "ToDo List" Application](#end-to-end-jamstack-todo-list-application)
 
 ## Base Sample
 
@@ -21,7 +22,23 @@ The basic .Net Aspire application with a simple WebAPI project (WebApplication1)
 
 - Folder: [`./byoss`](./byoss)
 
-The simplest integration of SQL Server in .NET Aspire. It takes the "Base" example and updates the WebAPI so that now it is calling an existing SQL Server, using a provided connectiong string.
+The simplest integration of SQL Server in .NET Aspire. It takes the "Base" example and updates the WebAPI so that now it is calling an existing SQL Server, using a provided connectiong string. If you need a free, on-premise SQL Server, you can use the [SQL Server Developer Edition](https://www.microsoft.com/en-us/sql-server/sql-server-downloads) that is free for development and testing. The easiest way to run it is to use the image that you can get using [`sqlcmd`](https://azuresql.dev/content/sql-server-dev-go-sqlcmd):
+
+```bash
+sqlcmd create mssql --accept-eula
+```
+
+Get the ADo.NET connection string from the SQL Server container via:
+
+```bash
+sqlcmd config cs
+```
+
+and then make sure to save it in the user secrets of the `AspireApp1.AppHost` project, so that it can be used by the application. 
+
+```bash
+dotnet user-secrets set 'ConnectionStrings:db' '<your-connection-string>'
+```
 
 ## Aspire-Hosted SQL Server
 

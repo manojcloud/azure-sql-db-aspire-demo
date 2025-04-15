@@ -10,6 +10,11 @@ var dbDeploy = builder.AddProject<Projects.DatabaseDeploy>("dbDeploy")
     .WaitFor(db);
 
 builder.AddDataAPIBuilder("dab")
+    .WithUrlForEndpoint("http", url =>
+    {
+        url.DisplayText = "Forecast API (HTTP)";
+        url.Url += "/api/weatherforecasts";
+    })
     .WithReference(db)
     .WaitFor(db)
     .WaitForCompletion(dbDeploy);

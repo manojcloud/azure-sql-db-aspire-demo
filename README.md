@@ -1,6 +1,8 @@
 # SQL Server Aspire Samples
 
-A set of samples that show how to integrate SQL Server and Azure SQL with .NET Aspire. **Updated to use Aspire 9.2.**
+A set of samples that show how to integrate SQL Server and Azure SQL with .NET Aspire. 
+
+**Updated to use Aspire 9.2.**
 
 + [SQL Server Aspire Samples](#sql-server-aspire-samples)
   + [Base Sample](#base-sample)
@@ -44,7 +46,13 @@ dotnet user-secrets set 'ConnectionStrings:db' '<your-connection-string>'
 
 - Folder: [`./hostedss`](./hostedss)
 
-Change the BYOSS sample so the SQL Server is deployed and managed by Aspire orchestration, providing a basic integration with the Aspire environment. SQL Server is deployed in a OCI container by Aspire. No changes to WebAPI project.
+Change the BYOSS sample so the SQL Server is deployed and managed by Aspire orchestration, providing a basic integration with the Aspire environment. SQL Server is deployed in a OCI container by Aspire. No changes to WebAPI project. If you want to set the password for the created SQL Server, you can do it by setting the `` user secret:
+
+```bash
+dotnet user-secrets set 'Parameters:sqlsrv-password' '<your-password>' 
+```
+
+otherwise a random generated password will be used. Read all the details on Azure SQL and SQL Server integration with Aspire here: [.NET Aspire SQL Server integration](https://learn.microsoft.com/en-us/dotnet/aspire/database/sql-server-integration)
 
 The integration with Aspire is quite basic in this sample as it is done using only on the server side, introducting usage the `Aspire.Hosting.SqlServer` library in AppHost project. 
 

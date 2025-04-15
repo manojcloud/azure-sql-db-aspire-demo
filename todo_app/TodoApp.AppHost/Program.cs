@@ -18,6 +18,11 @@ var dbPrj = builder.AddSqlProject<Projects.TodoDB>("tododb")
 
 var dab = builder.AddDataAPIBuilder("dab")
     .WithImageTag("latest")
+    .WithUrlForEndpoint("http", url =>
+    {
+        url.DisplayText = "Swagger UI";
+        url.Url += "/swagger";
+    })
     .WithReference(sqlDb)    
     .WaitFor(sqlDb)
     .WaitForCompletion(dbPrj);

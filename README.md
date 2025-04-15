@@ -44,7 +44,13 @@ dotnet user-secrets set 'ConnectionStrings:db' '<your-connection-string>'
 
 - Folder: [`./hostedss`](./hostedss)
 
-Change the BYOSS sample so the SQL Server is deployed and managed by Aspire orchestration, providing a basic integration with the Aspire environment. SQL Server is deployed in a OCI container by Aspire. No changes to WebAPI project.
+Change the BYOSS sample so the SQL Server is deployed and managed by Aspire orchestration, providing a basic integration with the Aspire environment. SQL Server is deployed in a OCI container by Aspire. No changes to WebAPI project. If you want to set the password for the created SQL Server, you can do it by setting the `` user secret:
+
+```bash
+dotnet user-secrets set 'Parameters:sqlsrv-password' '<your-password>' 
+```
+
+otherwise a random generated password will be used.
 
 The integration with Aspire is quite basic in this sample as it is done using only on the server side, introducting usage the `Aspire.Hosting.SqlServer` library in AppHost project. 
 

@@ -30,7 +30,7 @@ The simplest integration of SQL Server in .NET Aspire. It takes the "Base" examp
 sqlcmd create mssql --accept-eula
 ```
 
-Get the ADo.NET connection string from the SQL Server container via:
+Get the ADO.NET connection string from the SQL Server container via:
 
 ```bash
 sqlcmd config cs

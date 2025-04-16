@@ -1,5 +1,3 @@
-using Google.Protobuf.WellKnownTypes;
-
 var builder = DistributedApplication.CreateBuilder(args);
 
 builder.AddProject<Projects.WebApplication1>("web")

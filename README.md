@@ -1,6 +1,6 @@
 # SQL Server Aspire Samples
 
-A set of samples that show how to integrate SQL Server and Azure SQL with .NET Aspire. 
+A set of samples that show how to integrate SQL Server and Azure SQL with [.NET Aspire](https://learn.microsoft.com/en-us/dotnet/aspire/get-started/aspire-overview). 
 
 **Updated to use Aspire 9.2.**
 
@@ -30,7 +30,7 @@ The simplest integration of SQL Server in .NET Aspire. It takes the "Base" examp
 sqlcmd create mssql --accept-eula
 ```
 
-Get the ADo.NET connection string from the SQL Server container via:
+Get the ADO.NET connection string from the SQL Server container via:
 
 ```bash
 sqlcmd config cs

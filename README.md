@@ -91,7 +91,7 @@ Please note that to keep the sample as simple as possible the EF Core entities a
 
 - Folder: [`./hostedss - dbup - dab`](./hostedss%20-%20dbup%20-%20dab)
 
-In this sample, taken from the `./hostedss - dbup` sample, and add Data API Builder (DAB) to the solution, so that the database can be exposed as a REST and GraphQL API, so there is no need anymore to manuallly created a CRUD API and therefore the WebAPI project is removed.
+In this sample, taken from the `./hostedss - dbup` sample, add [Data API Builder (DAB)](https://aka.ms/dab) to the solution, so that the database can be exposed as a REST and GraphQL API, so there is no need anymore to manuallly create a CRUD API and therefore the WebAPI project is removed.
 
 DAB is orchestrated by Aspire, via the community extension `CommunityToolkit.Aspire.Hosting.Azure.DataApiBuilder`, that has been added to the AppHost project.
 

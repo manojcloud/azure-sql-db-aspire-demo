@@ -88,16 +88,7 @@ export default {
       this.visibility = "all";
     }
 
-    fetch('/.auth/me')
-      .then(res => {
-        return res.json()
-      })
-      .then(payload => {
-        const { clientPrincipal } = payload;
-        this.userDetails = clientPrincipal?.userDetails;
-        this.userId = clientPrincipal?.userId ?? "public";
-      });
-    
+    this.userId = "public";    
     this.getTodos();
   },
 

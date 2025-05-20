@@ -46,7 +46,7 @@ dotnet user-secrets set 'ConnectionStrings:db' '<your-connection-string>'
 
 - Folder: [`./hostedss`](./hostedss)
 
-Change the BYOSS sample so the SQL Server is deployed and managed by Aspire orchestration, providing a basic integration with the Aspire environment. SQL Server is deployed in a OCI container by Aspire. No changes to WebAPI project. If you want to set the password for the created SQL Server, you can do it by setting the `` user secret:
+Change the BYOSS sample so the SQL Server is deployed and managed by Aspire orchestration, providing a basic integration with the Aspire environment. SQL Server is deployed in a OCI container by Aspire. No changes to WebAPI project. If you want to set the password for the created SQL Server, you can do it by setting the `Parameters:sqlsrv-password` user secret:
 
 ```bash
 dotnet user-secrets set 'Parameters:sqlsrv-password' '<your-password>' 
@@ -91,7 +91,7 @@ Please note that to keep the sample as simple as possible the EF Core entities a
 
 - Folder: [`./hostedss - dbup - dab`](./hostedss%20-%20dbup%20-%20dab)
 
-In this sample, taken from the `./hostedss - dbup` sample, and add Data API Builder (DAB) to the solution, so that the database can be exposed as a REST and GraphQL API, so there is no need anymore to manuallly created a CRUD API and therefore the WebAPI project is removed.
+In this sample, taken from the `./hostedss - dbup` sample, add [Data API Builder (DAB)](https://aka.ms/dab) to the solution, so that the database can be exposed as a REST and GraphQL API, so there is no need anymore to manuallly create a CRUD API and therefore the WebAPI project is removed.
 
 DAB is orchestrated by Aspire, via the community extension `CommunityToolkit.Aspire.Hosting.Azure.DataApiBuilder`, that has been added to the AppHost project.
 

@@ -10,6 +10,7 @@ var dbDeploy = builder.AddProject<Projects.DatabaseDeploy>("dbDeploy")
     .WaitFor(db);
 
 builder.AddDataAPIBuilder("dab")
+    .WithImageTag("latest")
     .WithUrlForEndpoint("http", url =>
     {
         url.DisplayText = "Forecast API (HTTP)";

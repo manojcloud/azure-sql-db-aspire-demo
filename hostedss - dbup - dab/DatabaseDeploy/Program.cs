@@ -6,7 +6,7 @@ namespace DatabaseDeploy
     {
         static void Main(string[] args)
         {
-            string connectionString = Environment.GetEnvironmentVariable("ConnectionStrings__db");
+            string connectionString = Environment.GetEnvironmentVariable("ConnectionStrings__db") ?? string.Empty;
             EnsureDatabase.For.SqlDatabase(connectionString);
             DeployChanges.To.SqlDatabase(connectionString)                
                 .WithScriptsFromFileSystem("../../../scripts")

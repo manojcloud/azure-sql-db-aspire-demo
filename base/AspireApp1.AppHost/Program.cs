@@ -7,10 +7,10 @@ builder.AddProject<Projects.WebApplication1>("web")
         url.Url += "/weatherforecast";
     })
     .WithUrlForEndpoint("https", url =>
-        {
-            url.DisplayText = "Forecast API (HTTPS)";
-            url.Url += "/weatherforecast";
-        })
+    {
+        url.DisplayText = "Forecast API (HTTPS)";
+        url.Url += "/weatherforecast";
+    })
 ;
 
 builder.Build().Run();

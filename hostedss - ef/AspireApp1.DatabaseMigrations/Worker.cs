@@ -1,10 +1,9 @@
-using System.Diagnostics;
-
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage;
-
 using OpenTelemetry.Trace;
+using System.Diagnostics;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace AspireApp1.DatabaseMigrations;
 
@@ -27,7 +26,7 @@ public class Worker(IServiceProvider serviceProvider, IHostApplicationLifetime h
         }
         catch (Exception ex)
         {
-            activity?.RecordException(ex);
+            activity?.AddException(ex);
             throw;
         }
 
@@ -63,12 +62,17 @@ public class Worker(IServiceProvider serviceProvider, IHostApplicationLifetime h
     }
 
     private static async Task SeedDataAsync(WeatherForecastContext dbContext, CancellationToken cancellationToken)
-    {
-        WeatherForecastData wfd = new()
-        {
-            Date = DateOnly.FromDateTime(DateTime.Today),
-            TemperatureC = 20
-        };
+    { 
+        List<WeatherForecastData> wfdList = [
+            new () {
+                Date = DateOnly.FromDateTime(DateTime.Today),
+                TemperatureC = 20
+            },
+            new () {
+                Date = DateOnly.FromDateTime(DateTime.Today.AddDays(1)),
+                TemperatureC = 22
+            },
+        ];
 
         var strategy = dbContext.Database.CreateExecutionStrategy();
         await strategy.ExecuteAsync(async () =>
@@ -76,9 +80,12 @@ public class Worker(IServiceProvider serviceProvider, IHostApplicationLifetime h
             // Seed the database
             await using var transaction = await dbContext.Database.BeginTransactionAsync(cancellationToken);
 
-            if (dbContext.WeatherForecasts.Where(d => d.Date == wfd.Date).SingleOrDefault() == null)
-                await dbContext.WeatherForecasts.AddAsync(wfd, cancellationToken);
-            
+            foreach (var wfd in wfdList)
+            {
+                if (dbContext.WeatherForecasts.Where(d => d.Date == wfd.Date).SingleOrDefault() == null)
+                    await dbContext.WeatherForecasts.AddAsync(wfd, cancellationToken);
+            }
+
             await dbContext.SaveChangesAsync(cancellationToken);
             await transaction.CommitAsync(cancellationToken);
         });

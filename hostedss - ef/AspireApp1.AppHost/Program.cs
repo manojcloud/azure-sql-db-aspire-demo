@@ -6,15 +6,6 @@ var builder = DistributedApplication.CreateBuilder(args);
 // var sqlSrv = builder.AddSqlServer("sqlsrv", port:1435).
 //     WithLifetime(ContainerLifetime.Persistent);
 
-// If you plan to deploy in Azure SQL Server specifying the database SKU
-// var sqlSrv = builder.AddAzureSqlServer("sqlsrv")
-//     .ConfigureInfrastructure(infra => {
-//         var azureResources = infra.GetProvisionableResources();
-//         var azureDb = azureResources.OfType<SqlDatabase>().Single();
-//         azureDb.Sku = new SqlSku() { Name = "GP_Gen5_2" };
-//     })
-//     .RunAsContainer();
-
 // If you plan to deploy in Azure SQL Server using the free Azure SQL DB offer
 var sqlSrv = builder.AddAzureSqlServer("sqlsrv")
     .RunAsContainer();

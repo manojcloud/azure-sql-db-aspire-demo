@@ -1,8 +1,10 @@
 # SQL Server Aspire Samples
 
-A set of samples that show how to integrate SQL Server and Azure SQL with [.NET Aspire](https://learn.microsoft.com/en-us/dotnet/aspire/get-started/aspire-overview). 
+A set of samples that show how to integrate SQL Server and Azure SQL with [.NET Aspire](https://learn.microsoft.com/dotnet/aspire/get-started/aspire-overview). 
 
-**Updated to use Aspire 9.3**
+**Updated to use Aspire 9.4**
+
+All the samples can now be easily executed via the [Aspire CLI](https://learn.microsoft.com/dotnet/aspire/cli/install?tabs=windows), using the `aspire run` command from each sample folder.
 
 + [SQL Server Aspire Samples](#sql-server-aspire-samples)
   + [Base Sample](#base-sample)
@@ -101,14 +103,13 @@ DAB is orchestrated by Aspire, via the community extension `CommunityToolkit.Asp
 
 Full end-to-end example of a Jamstack application, with a Vue front-end, a Data API Builder back-end, and SQL Server database, deployed using a [SDK-Style Database Project](https://techcommunity.microsoft.com/blog/azuresqlblog/the-microsoft-build-sql-project-sdk-is-now-generally-available/4392063). Everything is orchestrated by Aspire, including the Node application (TodoApp.Frontend), thanks to the `CommunityToolkit.Aspire.Hosting.NodeJS.Extensions` library.
 
-You can run the application, either via Visual Studio or Visual Studio Coide or the command line:
+You can run the application, either via Visual Studio or Visual Studio Code or the command line:
 
 ```
-cd .\TodoApp.AppHost\
-dotnet run
+aspire run
 ```
 
-if for some reason you get an error about `.dacpac` file not being available, you can run the following command to build the database project:
+if for some reason you get an error about `.dacpac` file not being available, build the .dacpac manually by runnig the following command to build the database project:
 
 ```
 cd .\TodoApp.Database\

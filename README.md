@@ -1,3 +1,5 @@
+MANOJ CHANGES
+
 # SQL Server Aspire Samples
 
 A set of samples that show how to integrate SQL Server and Azure SQL with [.NET Aspire](https://learn.microsoft.com/dotnet/aspire/get-started/aspire-overview). 
